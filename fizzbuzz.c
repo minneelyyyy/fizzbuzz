@@ -7,7 +7,7 @@ extern ssize_t sys_write(int fd, void* buf, size_t sz);
 __attribute__((__noreturn__))
 extern void sys_exit(int rval);
 
-inline size_t numdigits(unsigned int n) {
+static inline size_t numdigits(unsigned int n) {
 	size_t count = 0;
 
 	while (n > 0) {
@@ -18,7 +18,7 @@ inline size_t numdigits(unsigned int n) {
 	return count;
 }
 
-inline size_t utoa(char* dest, unsigned int n) {
+static inline size_t utoa(char* dest, unsigned int n) {
 	const size_t digit_count = numdigits(n);
 	size_t i = digit_count;
 
